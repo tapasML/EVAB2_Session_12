@@ -37,12 +37,8 @@ def modelSummary(model):
 def definelossfunction():
     global criterion, optimizer, scheduler
     criterion = nn.CrossEntropyLoss()
-    #optimizer = optim.SGD(model.parameters(), lr = 0.01, momentum = MOMENTUM)
-    #scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones = MILESTONES, gamma = GAMMA)
-    
-    optimizer = optim.SGD(model.parameters(), lr = 0.04, momentum = MOMENTUM)
-    scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, pct_start=0.2, max_lr=0.4, steps_per_epoch=int(100_000/250), epochs=50, anneal_strategy='linear' )
-    
+    optimizer = optim.SGD(model.parameters(), lr = 0.01, momentum = MOMENTUM)
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones = MILESTONES, gamma = GAMMA)
     
 # train the model. Note that single channel image is trained
 def trainmodel():  
@@ -84,9 +80,7 @@ def trainmodel():
                 print('[%d, %5d] loss: %.3f' %
                       (epoch + 1, i + 1, running_loss / 2000))
                 running_loss = 0.0
-                
-            ''' stepup after each batch !'''
-            scheduler.step()
+        
                 
         test_accuracy = testmodel(model) 
         test_accuracies.append(test_accuracy)   
@@ -97,7 +91,7 @@ def trainmodel():
         print('correct /processed =',correct, processed)
         print(f'Epoch = {epoch}, Training Accuracy:  {train_accuracy:0.2f}, Test Accuracy: {test_accuracy:0.2f}')    
         # warm up       
-        #scheduler.step()
+        scheduler.step()
        
     print('Finished Training')
     return model
