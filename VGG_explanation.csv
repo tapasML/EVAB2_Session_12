@@ -6,7 +6,7 @@ boots_003.JPG,78178,"{""image_width"":""484"",
 Image may have multiple bounding boxes",size of the image file in bytes,"attribute of the image file.
 Image width and 
 image height.
-These properties were added in VGG Annotator",\n
+These properties were added in VGG Annotator",
 Number of bounding boxed in the image,identifies index of one bounding box in the image,"Describes the bounding box.
 name: could be rectangle/ polygon etc.. Since the bounding box shapes coule be different.
 x: x-cordinate of the bounding box upper left corner
