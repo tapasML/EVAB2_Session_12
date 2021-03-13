@@ -1,3 +1,3 @@
 # EVAB2_Session_12
 
- TINY IMAGENET dataset Resnet18 73.XX accuracy in 36 epochs
+ TINY IMAGENET dataset Resnet18 53.55 accuracy in 11 epochs
