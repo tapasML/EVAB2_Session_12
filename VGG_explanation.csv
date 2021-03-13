@@ -1,0 +1,17 @@
+filename,file_size,file_attributes,region_count,region_id,region_shape_attributes,region_attributes
+boots_003.JPG,78178,"{""image_width"":""484"",
+""image_height"":""710""}",6,0,"{""name"":""rect"",""x"":90,""y"":584,""width"":53,""height"":124}","{""class_name"":""boots""}"
+,,,,,,
+"Name of image.
+Image may have multiple bounding boxes",size of the image file in bytes,"attribute of the image file.
+Image width and 
+image height.
+These properties were added in VGG Annotator",Number of bounding boxed in the image,identifies index of one bounding box in the image,"Describes the bounding box.
+name: could be rectangle/ polygon etc.. Since the bounding box shapes coule be different.
+x: x-cordinate of the bounding box upper left corner
+y: y-cordinate of the bounding box lower right corner
+Note that: from the image width/ height andbounding box (x,y) and (width, height) we calculated the centroid, normalized heigth and normalized weight using pandas package and claculated # of optimum clusters
+","attributes for the bounding box.
+E.g. class name of the object
+
+We had four classes defined : hardhat, boots, vest , mask"
